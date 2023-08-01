@@ -1,0 +1,194 @@
+@font-face {
+  font-family: roboto;
+  src: url(assets/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: robotoBold;
+  src: url(assets/fonts/Roboto-Bold.ttf);
+}
+
+:root {
+  /* Primary Color */
+  --tomato-color: hsl(4, 100%, 67%);
+
+  /* Neutral Colors */
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: roboto;
+  background-color: var(--dark-slate-grey);
+}
+
+/* Sign-up Page */
+
+.card1 {
+  display: grid;
+  width: 700px;
+  padding: 1rem;
+  border-radius: 30px;
+  grid-template-columns: 1fr 300px;
+  background-color: white;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 3rem 0 3rem;
+  gap: 1rem;
+}
+
+.left h1 {
+  font-family: robotoBold;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.left p {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.left ul {
+  list-style-image: url(assets/images/icon-list.svg);
+  list-style-position: inside;
+}
+
+.left li {
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  vertical-align: middle;
+}
+
+.left form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.left label {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.left input {
+  padding: 1rem;
+  border: 1px solid var(--grey);
+  border-radius: 7px;
+  color: var(--grey);
+  cursor: pointer;
+}
+
+.left input:focus {
+  color: var(--dark-slate-grey);
+}
+
+.input-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-title small {
+  color: red;
+}
+
+button {
+  padding: 1rem;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--charcoal-grey);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--tomato-color);
+}
+
+.right img {
+  width: 300px;
+}
+
+/* Success msg */
+
+.card2 {
+  display: none;
+  width: 350px;
+  padding: 50px;
+  border-radius: 30px;
+  flex-direction: column;
+  background-color: var(--white);
+  gap: 30px;
+}
+
+.card2 #icon {
+  width: 50px;
+}
+
+.card2 h1 {
+  font-size: 3rem;
+  font-family: robotoBold;
+  font-weight: bold;
+  color: var(--dark-slate-grey);
+}
+
+.card2 p {
+  font-size: 0.95rem;
+}
+
+
+@media (max-width: 400px) {
+  body {
+    display: block;
+    background-color: var(--white);
+    height: auto;
+  }
+  .card1 {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  .left {
+    padding: 25px 20px;
+  }
+  
+  .right img {
+    content: url("./assets/images/illustration-sign-up-mobile.svg");
+    margin: 0;
+    width: 100%;
+  }
+
+  .card2 {
+    padding: 20px;
+    width: auto;
+  }
+
+  .card2 #icon {
+    padding-top: 100px;
+  }
+
+
+  .card2 button {
+    margin-top: 150px;
+  }
+  
+}
